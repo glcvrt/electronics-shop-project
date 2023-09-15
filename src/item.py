@@ -17,6 +17,7 @@ class Item:
         self.price = price
         self.quantity = quantity
 
+
     def calculate_total_price(self) -> float:
         """
         Рассчитывает общую стоимость конкретного товара в магазине.
@@ -31,3 +32,6 @@ class Item:
         """
         self.price *= self.pay_rate
 
+    def add(self):
+        x = str(Item(self.name, self.price, self.quantity))
+        self.all.append(x)
