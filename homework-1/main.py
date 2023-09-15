@@ -2,9 +2,7 @@ from src.item import Item
 
 if __name__ == '__main__':
     item1 = Item("Смартфон", 10000, 20)
-    item1.add()
     item2 = Item("Ноутбук", 20000, 5)
-    item2.add()
 
     print(item1.calculate_total_price())  # 200000
     print(item2.calculate_total_price())  # 100000
