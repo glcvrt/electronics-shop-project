@@ -21,3 +21,9 @@ def test_string_to_number(item1):
 
 def test_instantiate_from_csv(item1):
     assert item1.instantiate_from_csv('src/items.csv') == 10
+
+def test_repr(item1):
+    assert repr(item1) == "Item('Смартфон', 10000, 2)"
+
+def test_str(item1):
+    assert str(item1) == 'Смартфон'
