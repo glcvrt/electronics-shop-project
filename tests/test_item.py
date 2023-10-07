@@ -1,5 +1,5 @@
 import pytest
-from src.item import Item
+from src.item import Item, InstantiateCSVError
 
 
 @pytest.fixture
@@ -27,6 +27,14 @@ def test_string_to_number(item1):
 
 def test_instantiate_from_csv(item1):
     assert item1.instantiate_from_csv('src/items.csv') == 10
+
+def test_instantiate_from_csv(item1):
+    with pytest.raises(FileNotFoundError):
+        item1.instantiate_from_csv(a="non_existent.csv")
+
+def test_instantiate_from_csv(item1):
+    with pytest.raises(InstantiateCSVError):
+        item1.instantiate_from_csv(a="broken_items.csv")
 
 
 def test_repr(item1):
