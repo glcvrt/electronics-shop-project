@@ -61,7 +61,7 @@ class Item:
             return self.__name
 
     @classmethod
-    def instantiate_from_csv(cls, a=r"C:\Users\nikita\PycharmProjects\electronics-shop-project\src\ms.csv"):
+    def instantiate_from_csv(cls, a="../items.csv"):
         try:
             with open(a, newline='') as f:
                 reader = csv.DictReader(f)
@@ -74,9 +74,11 @@ class Item:
                     cls(name, price, quantity)
         except FileNotFoundError:
             print("_Отсутствует файл item.csv_")
+            raise
 
         except InstantiateCSVError:
             print("_Файл item.csv поврежден_")
+            raise
 
         return len(Item.all)
 
